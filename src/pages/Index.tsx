@@ -13,8 +13,8 @@ import {
 } from "lucide-react";
 import esportLogo from "@/assets/logo-esport-motor.png";
 
-const WA_MAIN = "551935229200"; // Rio Claro (principal)
-const WA_SC = "551633683060"; // São Carlos
+const WA_MAIN = "551633683060"; // São Carlos (principal)
+const WA_RC = "551935229200"; // Rio Claro
 
 const motos = [
   {
@@ -118,13 +118,17 @@ const Index = () => {
       {/* Header */}
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
         <div className="container flex items-center justify-between h-20">
-    <a
-      href="#"
-      aria-label="Ir para o topo da página"
-      className="flex items-center"
-    >
-      <Logos />
-    </a>
+          <a
+            href="#"
+            aria-label="Ir para o topo da página"
+            className="flex items-center gap-3"
+          >
+            <Logos />
+
+            <span className="text-lg font-semibold text-foreground">
+              São Carlos
+            </span>
+          </a>
 
     <nav
       aria-label="Navegação"
@@ -179,7 +183,7 @@ const Index = () => {
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
               Selecione o modelo, escolha o plano e parcele <strong className="text-primary">SEM JUROS</strong> com a
-              Esport Motor — concessionária Honda oficial em Rio Claro e São Carlos.
+              Esport Motor — concessionária Honda oficial em São Carlos.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -247,7 +251,7 @@ const Index = () => {
               "+30 Anos",
               "Seguro Incluso",
               "Planos Flexíveis",
-              "Rio Claro · São Carlos",
+              "São Carlos · Honda",
               "Simule pelo WhatsApp",
             ].map((t, i) => (
               <span key={`${k}-${i}`} className="flex items-center gap-12">
@@ -503,13 +507,13 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { cidade: "Rio Claro / SP", end: "Rua 14, 289 - Consolação", tel: "(19) 3522-9200", wa: WA_MAIN, accent: "primary" },
+              { cidade: "São Carlos / SP", end: "Av. São Carlos, 736 - Vila Lutfalla", tel: "(16) 3368-3060", wa: WA_MAIN, accent: "blue" },
               {
-                cidade: "São Carlos / SP",
-                end: "Av. São Carlos, 736 - Vila Lutfalla",
-                tel: "(16) 3368-3060",
-                wa: WA_SC,
-                accent: "blue",
+                cidade: "Rio Claro / SP",
+                end: "Rua 14, 289 - Consolação",
+                tel: "(19) 3522-9200",
+                wa: WA_RC,
+                accent: "primary",
               },
             ].map((l) => {
               const isBlue = l.accent === "blue";
@@ -543,8 +547,8 @@ const Index = () => {
                   </ul>
                   <a
                     href={
-                      l.cidade.includes("São Carlos")
-                        ? "https://api.whatsapp.com/send?phone=551633683060&text=Ol%C3%A1,%20pode%20me%20ajudar?"
+                      l.cidade.includes("Rio Claro")
+                        ? "https://api.whatsapp.com/send?phone=551935229200&text=Ol%C3%A1,%20pode%20me%20ajudar?"
                         : `https://api.whatsapp.com/send?phone=${WA_MAIN}`
                     }
                     target="_blank"
@@ -565,7 +569,7 @@ const Index = () => {
         <div className="container py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <Logos />
           <p className="text-xs text-muted-foreground uppercase tracking-widest">
-            Consórcio Honda · Rio Claro · São Carlos
+            Consórcio Honda · São Carlos
           </p>
           <div className="flex items-center gap-3">
             <a
